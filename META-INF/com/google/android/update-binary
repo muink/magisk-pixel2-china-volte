@@ -108,6 +108,14 @@ mkdir -p $MODPATH
 ui_print "- Extracting module files"
 unzip -o "$ZIP" 'system/*' -d $MODPATH >&2
 
+CONFIG_PATH=$MODPATH/system/vendor/mbn/mcfg/configs/mcfg_sw/generic
+CONFIG_FILE=$MODPATH/system/vendor/mbn/mcfg/configs/mcfg_sw/oem_sw.txt
+cp -af /system/vendor/mbn/mcfg/configs/mcfg_sw/oem_sw.txt $CONFIG_FILE 2>/dev/null
+
+(for file in `find $CONFIG_PATH -name "*.mbn"`; do
+	echo ${file##*configs/}
+done) >> $CONFIG_FILE
+
 # Remove placeholder
 rm -f $MODPATH/system/placeholder 2>/dev/null
 

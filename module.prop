@@ -1,7 +1,7 @@
-id=template
-name=Template Module
-version=v1
+id=magisk-pixel2-china-volte
+name=Magisk Pixel2 China VoITE(Pie)
+version=v1.0
 versionCode=1
-author=topjohnwu
-description=A short description
+author=muink
+description=Magisk Pixel2 China VoITE(Pie)
 minMagisk=17000
